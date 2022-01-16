@@ -1,12 +1,13 @@
-import { FontAwesome, Feather } from '@expo/vector-icons';
+import { FontAwesome, Feather, AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from 'react';
-import { Modal, Text, TextInput, TouchableOpacity, View, StyleSheet, ScrollView } from "react-native";
+import { Modal, Text, TextInput, TouchableOpacity, View, StyleSheet, ScrollView, Image } from "react-native";
 import global from "../../style/global.js";
 import style from './style.js';
-import { useFonts, NovaMono_400Regular } from '@expo-google-fonts/nova-mono';
+import { useFonts, Poppins_400Regular } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
+
 
 
 
@@ -16,39 +17,55 @@ export default function App() {
     const [modalVisible, setModalVisible] = useState(false);
 
     let [fontsLoaded] = useFonts({
-        NovaMono_400Regular,
+        Poppins_400Regular,
     });
 
     const font = StyleSheet.create({
         tittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 32,
             textAlign: 'center',
         },
         socialTittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 25,
             textAlign: 'center',
         },
+
         subTittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 18,
             textAlign: 'center',
         },
 
+        subTittlePage1: {
+            fontFamily: 'Poppins_400Regular',
+            color: '#000000',
+            fontSize: 18,
+            textAlign: 'center',
+            paddingHorizontal: '10%'
+        },
+
         text: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 15,
             textAlign: 'left',
             paddingLeft: "5%"
         },
 
+        text2: {
+            fontFamily: 'Poppins_400Regular',
+            color: '#000000',
+            fontSize: 15,
+            textAlign: 'left',
+            paddingLeft: "1%"
+        },
         tittle: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#ffffff',
             fontSize: 20,
             textAlign: 'center',
@@ -56,7 +73,7 @@ export default function App() {
         },
 
         valorText: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 20,
             textAlign: 'center',
@@ -64,7 +81,7 @@ export default function App() {
         },
 
         textInput: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             marginBottom: 10,
             padding: 10,
             borderWidth: 1,
@@ -80,7 +97,7 @@ export default function App() {
             fontSize: 15,
             paddingBottom: "10%",
             textAlign: 'center',
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
         }
     });
 
@@ -110,7 +127,7 @@ export default function App() {
         return <AppLoading />;
     } else {
         return (
-            <LinearGradient colors={['#ffffff', '#3202D1',]}
+            <LinearGradient colors={['#ffffff', '#A895C3',]}
                 style={global.LinearGradientList}>
 
                 <View style={style.buttonContainer}>
@@ -123,22 +140,35 @@ export default function App() {
                     </TouchableOpacity>
                 </View>
 
+
+
+
                 <ScrollView>
                     <View style={style.tittleContainer}>
-                        <Text style={font.tittlePage}>Lorem Ipsum</Text>
-                        <Text style={font.subTittlePage}>Da comunidade para a comunidade</Text>
+
+                        <View style={style.spaceRanking2}>
+                            <Image
+                                style={{ width: 180, height: 125 }}
+                                source={require('../../../assets/icon.png')}
+                            />
+                        </View>
+
                     </View>
 
+                    <Text style={font.subTittlePage1}>Comunidade, inclusão e satisfação nas empresas</Text>
                     <View style={style.space}>
                         <TextInput
                             style={font.textInput}
-                            placeholder={'Procurar...'}
+                            placeholder={'Pesquisar empresas'}
                             placeholderTextColor={'#000000'}
                             underlineColorAndroid="transparent"
                         />
                     </View>
+                    <Text style={font.subTittlePage}>Da comunidade para a comunidade</Text>
 
-
+                    <View style={style.spaceRanking}>
+                        <AntDesign name="arrowdown" size={50} color="black" />
+                    </View>
                     <Modal
                         animationType="slide"
                         transparent={true}
@@ -162,22 +192,22 @@ export default function App() {
 
                                     <View style={style.spaceModal}>
                                         <TouchableOpacity style={style.openButton}
-                                            onPress={() => {we();}}>
+                                            onPress={() => { we(); }}>
                                             <Text style={font.tittle}>Quem somos</Text>
                                         </TouchableOpacity>
                                     </View>
 
                                     <View style={style.spaceModal}>
                                         <TouchableOpacity style={style.openButton}
-                                            onPress={() => {undertakes();}}>
+                                            onPress={() => { undertakes(); }}>
                                             <Text style={font.tittle}>Empresas</Text>
                                         </TouchableOpacity>
                                     </View>
 
                                     <View style={style.spaceModal}>
                                         <TouchableOpacity style={style.openButton}
-                                            onPress={() => {colaborate();}}>
-                                            <Text style={font.tittle}>Colabore conosco</Text>
+                                            onPress={() => { colaborate(); }}>
+                                            <Text style={font.tittle}>Colabore</Text>
                                         </TouchableOpacity>
                                     </View>
 
@@ -188,41 +218,36 @@ export default function App() {
 
 
                     <View style={style.spaceHome}>
-                        <Text style={font.tittlePage}>O que é?</Text>
-                        <Text style={font.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                            est laborum.</Text>
+
                         <View style={style.space}>
 
-                            <Text style={font.tittlePage}>Valores</Text>
+                            <Text style={font.tittlePage}>Pilares</Text>
 
                             <View style={style.homeContainer}>
                                 <View style={style.centerIten}>
-                                    <Text style={font.valorText}>Lorem Ipsum</Text>
+                                    <Text style={font.valorText}>Transparência</Text>
                                     <Feather name="menu" size={50} color={"#000000"} />
                                 </View>
 
                                 <View style={style.centerIten}>
-                                    <Text style={font.valorText}>Lorem Ipsum</Text>
+                                    <Text style={font.valorText}>Equalidade</Text>
                                     <Feather name="menu" size={50} color={"#000000"} />
                                 </View>
                             </View>
-
-                            <View style={style.homeContainer}>
-                                <View style={style.centerIten}>
-                                    <Text style={font.valorText}>Lorem Ipsum</Text>
-                                    <Feather name="menu" size={50} color={"#000000"} />
-                                </View>
-
-                                <View style={style.centerIten}>
-                                    <Text style={font.valorText}>Lorem Ipsum</Text>
-                                    <Feather name="menu" size={50} color={"#000000"} />
-                                </View>
+                            <View style={style.centerIten}>
+                                <Text style={font.valorText}>Pratricidade</Text>
+                                <Feather name="menu" size={50} color={"#000000"} />
+                            </View>
+                            <View style={style.space1}>
+                                <Text style={font.tittlePage}>Visão</Text>
+                                <Text style={font.text2}>Ser o maior portal de informação e pesquisa de
+                                    consumo sobre Inclusão da comunidade LGBTQIA+ nas empresas, fornecendo
+                                    soluções de políticas inclusivas.</Text>
                             </View>
 
+                            <Text style={font.tittlePage}>Missão</Text>
+                            <Text style={font.text}>Reconfigurar todas as  áreas de consumo,
+                                criando novos hábitos conscientes, da comunidade para comunidade.</Text>
                         </View>
                     </View>
 
@@ -230,20 +255,29 @@ export default function App() {
                     <View style={style.spaceHome}>
                         <Text style={font.tittlePage}>Ranking</Text>
                         <View style={style.space}>
-                            <View style={style.spaceRanking}>
-                                <Feather name="menu" size={50} color={"#000000"} />
-                                <Text style={font.valorText}>Lorem Ipsum</Text>
-                            </View>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('boticario')}>
+                                <View style={style.spaceRanking2}>
+                                    <Feather name="menu" size={50} color={"#000000"} />
+                                    <Text style={font.valorText}>Boticario</Text>
+                                </View>
+                            </TouchableOpacity>
 
-                            <View style={style.spaceRanking}>
-                                <Feather name="menu" size={50} color={"#000000"} />
-                                <Text style={font.valorText}>Lorem Ipsum</Text>
-                            </View>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('carrefour')}>
+                                <View style={style.spaceRanking2}>
+                                    <Feather name="menu" size={50} color={"#000000"} />
+                                    <Text style={font.valorText}>Carrefour</Text>
+                                </View>
+                            </TouchableOpacity>
 
-                            <View style={style.spaceRanking}>
-                                <Feather name="menu" size={50} color={"#000000"} />
-                                <Text style={font.valorText}>Lorem Ipsum</Text>
-                            </View>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('riachuelo')}>
+                                <View style={style.spaceRanking2}>
+                                    <Feather name="menu" size={50} color={"#000000"} />
+                                    <Text style={font.valorText}>Riachuelo</Text>
+                                </View>
+                            </TouchableOpacity>
 
 
                         </View>
@@ -253,17 +287,16 @@ export default function App() {
                         <View style={style.minorSpaceHomeVertical}>
                             <Text style={font.socialTittlePage}>Nossas redes sociais</Text>
                             <View style={style.homeContainer}>
+
                                 <View style={style.centerIten}>
-                                    <Feather name="menu" size={50} color={"#000000"} />
+                                    <AntDesign name="twitter" size={50} color={"#000000"} />
                                 </View>
 
                                 <View style={style.centerIten}>
-                                    <Feather name="menu" size={50} color={"#000000"} />
+                                    <AntDesign name="instagram" size={50} color={"#000000"} />
                                 </View>
 
-                                <View style={style.centerIten}>
-                                    <Feather name="menu" size={50} color={"#000000"} />
-                                </View>
+
                             </View>
                         </View>
                     </View>

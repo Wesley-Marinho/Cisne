@@ -66,8 +66,19 @@ export default StyleSheet.create({
         padding: "10%",
     },
 
-    spaceRanking: {
+    space1: {
         padding: "5%",
+    },
+
+    spaceRanking: {
+        paddingTop: "30%",
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+
+    spaceRanking2: {
+        paddingTop: "10%",
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -109,5 +120,14 @@ export default StyleSheet.create({
         paddingBottom: "10%"
     },
 
-
+    notaContainer:{
+        borderRadius: 100,
+        backgroundColor: 'transparent',
+        borderColor: '#000000',
+        borderWidth: 2,
+        width: 100,
+        height: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 })

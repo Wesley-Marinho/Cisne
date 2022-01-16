@@ -5,10 +5,8 @@ import React, { useState } from 'react';
 import { Modal, Text, TextInput, TouchableOpacity, View, StyleSheet, ScrollView } from "react-native";
 import global from "../../style/global.js";
 import style from './style.js';
-import { useFonts, NovaMono_400Regular } from '@expo-google-fonts/nova-mono';
+import { useFonts, Poppins_400Regular } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
-
-
 
 
 export default function App() {
@@ -16,31 +14,31 @@ export default function App() {
     const [modalVisible, setModalVisible] = useState(false);
 
     let [fontsLoaded] = useFonts({
-        NovaMono_400Regular,
+        Poppins_400Regular,
     });
 
     const font = StyleSheet.create({
         tittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 32,
             textAlign: 'center',
         },
         socialTittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 25,
             textAlign: 'center',
         },
         subTittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 18,
             textAlign: 'center',
         },
 
         text: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 15,
             textAlign: 'left',
@@ -48,7 +46,7 @@ export default function App() {
         },
 
         tittle: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#ffffff',
             fontSize: 20,
             textAlign: 'center',
@@ -56,7 +54,7 @@ export default function App() {
         },
 
         valorText: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 20,
             textAlign: 'center',
@@ -64,7 +62,7 @@ export default function App() {
         },
 
         textInput: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             marginBottom: 10,
             padding: 10,
             borderWidth: 1,
@@ -80,7 +78,7 @@ export default function App() {
             fontSize: 15,
             paddingBottom: "10%",
             textAlign: 'center',
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
         }
     });
 
@@ -111,7 +109,7 @@ export default function App() {
         return <AppLoading />;
     } else {
         return (
-            <LinearGradient colors={['#ffffff', '#3202D1',]}
+            <LinearGradient colors={['#ffffff', '#A895C3',]}
                 style={global.LinearGradientList}>
 
                 <View style={style.buttonContainer}>
@@ -124,43 +122,42 @@ export default function App() {
                     </TouchableOpacity>
                 </View>
                 <View>
-                        <Text style={font.tittlePage}>O que é?</Text>
-                        <Text style={font.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                            est laborum.</Text>
-                        <View style={style.space}>
+                    <Text style={font.tittlePage}>Quem somos</Text>
+                    <Text style={font.text}>Somos uma empresa de tecnologia, criada no intuito de
+                        informar e criar novas experiências de consumo consciente ao público lgbtqia+.
+                        Hoje em dia sabemos que muitas empresas não estão ao encontro do respeito,
+                        transparência e viabilidade com nossa comunidade, com isso, é válido que
+                        tenhamos um banco de dados que nos forneça a melhor experiecia de consumo.</Text>
+                    <View style={style.space}>
 
-                            <Text style={font.tittlePage}>Valores</Text>
+                        <Text style={font.tittlePage}>Valores</Text>
 
-                            <View style={style.homeContainer}>
-                                <View style={style.centerIten}>
-                                    <Text style={font.valorText}>Lorem Ipsum</Text>
-                                    <Feather name="menu" size={50} color={"#000000"} />
-                                </View>
-
-                                <View style={style.centerIten}>
-                                    <Text style={font.valorText}>Lorem Ipsum</Text>
-                                    <Feather name="menu" size={50} color={"#000000"} />
-                                </View>
+                        <View style={style.homeContainer}>
+                            <View style={style.centerIten}>
+                                <Text style={font.valorText}>Lorem Ipsum</Text>
+                                <Feather name="menu" size={50} color={"#000000"} />
                             </View>
 
-                            <View style={style.homeContainer}>
-                                <View style={style.centerIten}>
-                                    <Text style={font.valorText}>Lorem Ipsum</Text>
-                                    <Feather name="menu" size={50} color={"#000000"} />
-                                </View>
-
-                                <View style={style.centerIten}>
-                                    <Text style={font.valorText}>Lorem Ipsum</Text>
-                                    <Feather name="menu" size={50} color={"#000000"} />
-                                </View>
+                            <View style={style.centerIten}>
+                                <Text style={font.valorText}>Lorem Ipsum</Text>
+                                <Feather name="menu" size={50} color={"#000000"} />
                             </View>
-
                         </View>
+
+                        <View style={style.homeContainer}>
+                            <View style={style.centerIten}>
+                                <Text style={font.valorText}>Lorem Ipsum</Text>
+                                <Feather name="menu" size={50} color={"#000000"} />
+                            </View>
+
+                            <View style={style.centerIten}>
+                                <Text style={font.valorText}>Lorem Ipsum</Text>
+                                <Feather name="menu" size={50} color={"#000000"} />
+                            </View>
+                        </View>
+
                     </View>
+                </View>
                 <Modal
                     animationType="slide"
                     transparent={true}
@@ -198,7 +195,7 @@ export default function App() {
                                 <View style={style.spaceModal}>
                                     <TouchableOpacity style={style.openButton}
                                         onPress={() => { colaborate(); }}>
-                                        <Text style={font.tittle}>Colabore conosco</Text>
+                                        <Text style={font.tittle}>Colabore</Text>
                                     </TouchableOpacity>
                                 </View>
 

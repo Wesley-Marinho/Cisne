@@ -96,7 +96,7 @@ function AuthRoutes() {
                     headerShown: false,
                     headerTintColor: '#000000',
                     headerBackTitleVisible: false,
-                    headerTitle: 'Colabore conosco'
+                    headerTitle: 'Colabore'
                 }} />
         </AuthStack.Navigator>
     );

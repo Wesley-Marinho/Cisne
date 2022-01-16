@@ -2,6 +2,24 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
 
+    notaContainer:{
+        borderRadius: 100,
+        backgroundColor: 'transparent',
+        borderColor: '#000000',
+        borderWidth: 2,
+        width: 100,
+        height: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    spaceRanking: {
+        padding: "5%",
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+
     tittleContainer: {
         paddingVertical: "10%"
     },
@@ -63,7 +81,7 @@ export default StyleSheet.create({
     },
 
     space: {
-        padding: "10%",
+        paddingVertical: "5%",
     },
 
     spaceRanking: {

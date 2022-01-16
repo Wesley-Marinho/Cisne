@@ -5,8 +5,9 @@ import React, { useState } from 'react';
 import { Modal, Text, TextInput, TouchableOpacity, View, StyleSheet, ScrollView } from "react-native";
 import global from "../../../style/global.js";
 import style from './style.js';
-import { useFonts, NovaMono_400Regular } from '@expo-google-fonts/nova-mono';
+import {useFonts, Poppins_400Regular} from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
+
 
 
 
@@ -16,31 +17,47 @@ export default function App() {
     const [modalVisible, setModalVisible] = useState(false);
 
     let [fontsLoaded] = useFonts({
-        NovaMono_400Regular,
+        Poppins_400Regular,
     });
 
     const font = StyleSheet.create({
         tittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 32,
             textAlign: 'center',
         },
-        socialTittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+
+        nota: {
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
-            fontSize: 25,
+            fontSize: 32,
             textAlign: 'center',
         },
-        subTittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+
+        notaText: {
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 18,
             textAlign: 'center',
         },
 
+        socialTittlePage: {
+            fontFamily: 'Poppins_400Regular',
+            color: '#000000',
+            fontSize: 25,
+            textAlign: 'center',
+        },
+        subTittlePage: {
+            fontFamily: 'Poppins_400Regular',
+            color: '#000000',
+            fontSize: 18,
+            textAlign: 'left',
+            paddingHorizontal: "10%"
+        },
+
         text: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 15,
             textAlign: 'left',
@@ -48,7 +65,7 @@ export default function App() {
         },
 
         tittle: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#ffffff',
             fontSize: 20,
             textAlign: 'center',
@@ -56,7 +73,7 @@ export default function App() {
         },
 
         valorText: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 20,
             textAlign: 'center',
@@ -64,7 +81,7 @@ export default function App() {
         },
 
         textInput: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             marginBottom: 10,
             padding: 10,
             borderWidth: 1,
@@ -80,9 +97,10 @@ export default function App() {
             fontSize: 15,
             paddingBottom: "10%",
             textAlign: 'center',
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
         }
     });
+
 
 
     function we() {
@@ -110,69 +128,40 @@ export default function App() {
         return <AppLoading />;
     } else {
         return (
-            <LinearGradient colors={['#ffffff', '#3202D1',]}
+            <LinearGradient colors={['#ffffff', '#A895C3',]}
                 style={global.LinearGradientList}>
                 <ScrollView>
-                <Text style={font.subTittlePage}>Dados gerais</Text>
+                <Text style={font.tittlePage}>Dados gerais</Text>
 
-                    <Text style={font.text}>Nome: Riachuelo</Text>
-                    <Text style={font.text}>Site:www.riachuelo.com.br</Text>
-                    <Text style={font.text}> Sede: São Paulo, Brasil</Text>
-                    <Text style={font.text}>Tamanho: Mais de 10.000 funcionários</Text>
-                    <Text style={font.text}>Fundação:1947</Text>
-                    <Text style={font.text}>Tipo: Empresa: privada</Text>
-                    <Text style={font.text}>Setor: Lojas de departamentos de roupa e de calçados</Text>
-                    <Text style={font.text}>Receita:De US$ 10 a US$ 25 milhões</Text>
-
-                    <Text style={font.subTittlePage}>Avaliações</Text>
-                    <Text style={font.text}>4,4 (675 avaliações)</Text>
-
-                    <Text style={font.subTittlePage}>Por dentro da empresa</Text>
-                    <Text style={font.text}>
-                        Funcionário atual, menos de um ano
-                        9 de fev. de 2021 - Funcionário confidencial
-                        Prós
-                        Meus colegas são ótimos, mas a empresa é horrível.
-                        Contras
-                        Uma burocracia infinita. Nenhum cuidado com o funcionário, total descaso com recursos necessários para os funcionários desenvolverem suas atividades.
-                    </Text>
-
-                    <Text style={font.subTittlePage}>Notícias relevantes</Text>
-                    <Text style={font.text}>
-                        Dono da Riachuelo declara apoio à bancada evangélica
-                        https://observatoriog.bol.uol.com.br/noticias/lgbts-organizam-boicote-a-riachuelo-apos-dono-declarar-apoio-a-bancada-evangelica
-                    </Text>
-                    <Text style={font.text}>
-                        Bolsonarista, dono da Riachuelo diz ser contra taxação de fortunas porque “empobrece ricos”
-                        "Esse é um imposto que diminui a desigualdade, mas achatando a pirâmide, empobrecendo os ricos", disse Flávio Rocha
-                        https://www.diariodocentrodomundo.com.br/essencial/dono-da-riachuelo-diz-que-taxar-grandes-fortunas-reduz-desigualdade-mas-empobrece-ricos/
-                    </Text>
+                <Text style={font.subTittlePage}>Nome: Riachuelo</Text>
+                <Text style={font.subTittlePage}>Site:www.riachuelo.com.br</Text>
                     
-                    <Text style={font.subTittlePage}>Info pra gentx!!</Text>
-                    <Text style={font.text}> Riachuelo tornou-se signatária do Fórum de Empresas e Direitos LGBTI +, em 2019. Assumindo 10 compromissos com o movimento LGBT+
-                            https://www.riachuelo.com.br/moda-que-transforma/sustentabilidade/diversidade
-                    </Text>
-
-                    <Text style={font.subTittlePage}>Processos judiciais</Text>
-                    <Text style={font.text}>
-                    16.000
-                    https://www.jusbrasil.com.br/processos/nome/27709324/lojas-riachuelo-sa
-                    </Text>
-
-                    <Text style={font.subTittlePage}>Somos um consumidor?</Text>
-                    <Text style={font.text}>12% da receita de publicidade são destinadas ao público LGBTQIA+
-                        (dados ilustrativos)
-                    </Text>
-
-                    <Text style={font.subTittlePage}>Quadro de funcionários</Text>
-                    <Text style={font.text}>13% dos funcionários e colaboradores pertecem a comunidade LGBTQIA
-                        (dados ilustrativos)    
-                    </Text>
+                <Text style={font.subTittlePage}>Tamanho: Mais de 10.000 funcionários</Text>
+                    
+                <Text style={font.subTittlePage}>Tipo: Empresa privada</Text>
+                <Text style={font.subTittlePage}>Setor: Lojas de departamentos de roupa e de calçados</Text>
+                    
 
 
 
 
+                    <View style={style.space}>
+                    <Text style={font.tittlePage}>Avaliação</Text>
+                    <Text style={font.notaText}>Recomendado por:</Text>
+                    </View>
 
+                    <View style={style.spaceRanking}>
+
+
+                        <View style={style.notaContainer}>
+                            <Text style={font.nota}>
+                                15%
+                            </Text>
+                        </View>
+
+                    </View>
+                    
+                    <Text style={font.notaText}>Dos usuários</Text>
 
 
 

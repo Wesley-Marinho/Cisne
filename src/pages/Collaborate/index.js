@@ -5,8 +5,9 @@ import React, { useState } from 'react';
 import { Modal, Text, TextInput, TouchableOpacity, View, StyleSheet, ScrollView } from "react-native";
 import global from "../../style/global.js";
 import style from './style.js';
-import { useFonts, NovaMono_400Regular } from '@expo-google-fonts/nova-mono';
+import {useFonts, Poppins_400Regular} from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
+
 
 
 
@@ -16,31 +17,31 @@ export default function App() {
     const [modalVisible, setModalVisible] = useState(false);
 
     let [fontsLoaded] = useFonts({
-        NovaMono_400Regular,
+        Poppins_400Regular,
     });
 
     const font = StyleSheet.create({
         tittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 32,
             textAlign: 'center',
         },
         socialTittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 25,
             textAlign: 'center',
         },
         subTittlePage: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 18,
             textAlign: 'center',
         },
 
         text: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 15,
             textAlign: 'center',
@@ -48,7 +49,7 @@ export default function App() {
         },
 
         tittle: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#ffffff',
             fontSize: 20,
             textAlign: 'center',
@@ -56,7 +57,7 @@ export default function App() {
         },
 
         valorText: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             color: '#000000',
             fontSize: 20,
             textAlign: 'center',
@@ -64,7 +65,7 @@ export default function App() {
         },
 
         textInput: {
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
             marginBottom: 10,
             padding: 10,
             borderWidth: 1,
@@ -80,7 +81,7 @@ export default function App() {
             fontSize: 15,
             paddingBottom: "10%",
             textAlign: 'center',
-            fontFamily: 'NovaMono_400Regular',
+            fontFamily: 'Poppins_400Regular',
         }
     });
 
@@ -111,7 +112,7 @@ export default function App() {
         return <AppLoading />;
     } else {
         return (
-            <LinearGradient colors={['#ffffff', '#3202D1',]}
+            <LinearGradient colors={['#ffffff', '#A895C3',]}
                 style={global.LinearGradientList}>
 
                 <View style={style.buttonContainer}>
